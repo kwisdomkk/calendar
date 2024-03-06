@@ -76,6 +76,7 @@ navs.forEach(nav=>{
 
 renderCalendar();
 
+//날짜선택
 let selectedYear = year;
 let selectedMonth = month;
 
