@@ -71,24 +71,27 @@ navs.forEach(nav=>{
     month=date.getMonth();
 
     renderCalendar();
+    select();
   })
 })
 
-renderCalendar();
-
 //날짜선택
-let selectedYear = year;
-let selectedMonth = month;
 
-document.querySelectorAll('.dates li').forEach(function(day) {
-    day.addEventListener('click', function() {
-        let selectedDate = parseInt(this.textContent);
-        handleSelectedDate(selectedDate);
+function select() {
+  document.querySelectorAll(".dates li").forEach(function (day) {
+    day.addEventListener("click", function () {
+      selectedDate = parseInt(this.textContent);
+      renderSelectedDateInfo();
     });
-});
-
-function handleSelectedDate(selectedDate) {
-    console.log(selectedYear + '년 ' + (selectedMonth + 1) + '월 ' + selectedDate + '일');
+  });
 }
+
+function renderSelectedDateInfo() {
+  let selectedDateInfo = year + "년 " + (month + 1) + "월 " + selectedDate + "일";
+  console.log(selectedDateInfo);
+}
+
+renderCalendar();
+select();
 
 
