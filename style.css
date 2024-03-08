@@ -48,6 +48,9 @@ h3{
   position: relative;
   z-index: 2;
 }
+.holiday{
+  color: red;
+}
 #prev,#next{
   width: 20px;
   height: 20px;
@@ -97,7 +100,26 @@ h3{
 } */
 .dates li.inactive{
   color: #fff;
+  pointer-events: none;
 }
+
+/* 선택 날짜 */
+.selected {
+  color: #377AFF;
+}
+.selected::before{
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top:60%;
+  left:51%;
+  transform: translate(-50%,-50%);
+  background: #E0EFFF;
+  border-radius: 50%;
+  z-index: -1;
+}
+
 
 @media screen and (min-width:1024px) {
   .wrap{

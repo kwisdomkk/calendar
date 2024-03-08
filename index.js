@@ -80,6 +80,10 @@ navs.forEach(nav=>{
 function select() {
   document.querySelectorAll(".dates li").forEach(function (day) {
     day.addEventListener("click", function () {
+      document.querySelectorAll(".dates li").forEach(function (otherDay) {
+        otherDay.classList.remove("selected");
+      });
+      this.classList.add("selected");
       selectedDate = parseInt(this.textContent);
       renderSelectedDateInfo();
     });
