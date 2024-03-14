@@ -74,28 +74,13 @@ navs.forEach(nav=>{
     year=date.getFullYear();
     month=date.getMonth();
 
-<<<<<<< HEAD:index.js
-    renderCalendar(); //켈린더 랜더링
-  })
-})
-
-renderCalendar(); //페이지 로드 시 캘리더 랜더링
-
-=======
     renderCalendar();
     select();
   })
 })
 
->>>>>>> d51238019235e12de1264e5fb84c922fc2ff2241:calendar.js
 //날짜선택
 
-<<<<<<< HEAD:index.js
-document.querySelectorAll('.dates li').forEach(function(day) {
-    day.addEventListener('click', function() {
-        let selectedDate = parseInt(this.textContent); //선택 날짜 가져오기
-        handleSelectedDate(selectedDate);
-=======
 function select() {
   document.querySelectorAll(".dates li").forEach(function (day) {
     day.addEventListener("click", function () {
@@ -105,7 +90,6 @@ function select() {
       this.classList.add("selected");
       selectedDate = parseInt(this.textContent);
       renderSelectedDateInfo();
->>>>>>> d51238019235e12de1264e5fb84c922fc2ff2241:calendar.js
     });
   });
 }
