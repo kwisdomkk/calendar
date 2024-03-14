@@ -74,25 +74,48 @@ navs.forEach(nav=>{
     year=date.getFullYear();
     month=date.getMonth();
 
+<<<<<<< HEAD:index.js
     renderCalendar(); //켈린더 랜더링
   })
 })
 
 renderCalendar(); //페이지 로드 시 캘리더 랜더링
 
-//날짜선택
-let selectedYear = year;
-let selectedMonth = month;
+=======
+    renderCalendar();
+    select();
+  })
+})
 
+>>>>>>> d51238019235e12de1264e5fb84c922fc2ff2241:calendar.js
+//날짜선택
+
+<<<<<<< HEAD:index.js
 document.querySelectorAll('.dates li').forEach(function(day) {
     day.addEventListener('click', function() {
         let selectedDate = parseInt(this.textContent); //선택 날짜 가져오기
         handleSelectedDate(selectedDate);
+=======
+function select() {
+  document.querySelectorAll(".dates li").forEach(function (day) {
+    day.addEventListener("click", function () {
+      document.querySelectorAll(".dates li").forEach(function (otherDay) {
+        otherDay.classList.remove("selected");
+      });
+      this.classList.add("selected");
+      selectedDate = parseInt(this.textContent);
+      renderSelectedDateInfo();
+>>>>>>> d51238019235e12de1264e5fb84c922fc2ff2241:calendar.js
     });
-});
-
-function handleSelectedDate(selectedDate) {
-    console.log(selectedYear + '년 ' + (selectedMonth + 1) + '월 ' + selectedDate + '일');
+  });
 }
+
+function renderSelectedDateInfo() {
+  let selectedDateInfo = year + "년 " + (month + 1) + "월 " + selectedDate + "일";
+  console.log(selectedDateInfo);
+}
+
+renderCalendar();
+select();
 
 
